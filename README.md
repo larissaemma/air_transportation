@@ -1,7 +1,7 @@
 # air_transportation
 
 Progress on capstone log:
-https://www.notion.so/be08861349f0433aaa3b9e02f5cca550?v=3c50660e8a914fecb2fed1286ab55a73
+https://www.notion.so/Air-Transportation-19f938dc8e8c4c09941d75e1aa3887b0
 
 <h1>Executive Summary</h1>
 <p>An overview on the entire project</p>
