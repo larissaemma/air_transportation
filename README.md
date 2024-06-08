@@ -2,6 +2,7 @@
 
 Progress on capstone log:
 https://www.notion.so/Air-Transportation-19f938dc8e8c4c09941d75e1aa3887b0
+Note: might have to publish for public to see will try to fix that ASAP
 
 <h1>Executive Summary</h1>
 <p>An overview on the entire project</p>
