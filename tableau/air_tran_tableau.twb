@@ -1,0 +1,2063 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20241.24.0208.0337                               -->
+<workbook original-version='18.1' source-build='2024.1.0 (20241.24.0208.0337)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='airline+' inline='true' name='federated.1ndpxjd145byc417l6dek1e9772m' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='airline' name='textscan.0pkmu5h1nlbmxb15zb8re1fun09r'>
+            <connection class='textscan' directory='C:/Users/xiaht/OneDrive/Documents/DA 11/Capstone/air_transportation/data' filename='airline.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='airline.csv' table='[airline#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='FL_DATE' ordinal='0' />
+            <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+            <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+            <column datatype='string' name='SCH_OP_CARRIER_AIRLINE_ID' ordinal='3' />
+            <column datatype='string' name='SCH_OP_CARRIER_FL_NUM' ordinal='4' />
+            <column datatype='integer' name='OP_CARRIER_AIRLINE_ID' ordinal='5' />
+            <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='6' />
+            <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='7' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='time_periods.csv' table='[time_periods#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='QUARTER' ordinal='0' />
+              <column datatype='integer' name='MONTH' ordinal='1' />
+              <column datatype='integer' name='DAY_OF_MONTH' ordinal='2' />
+              <column datatype='integer' name='DAY_OF_WEEK' ordinal='3' />
+              <column datatype='date' name='FL_DATE' ordinal='4' />
+              <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='5' />
+              <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='6' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='7' />
+              <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='8' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='airline.csv' table='[airline#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='FL_DATE' ordinal='0' />
+              <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+              <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+              <column datatype='string' name='SCH_OP_CARRIER_AIRLINE_ID' ordinal='3' />
+              <column datatype='string' name='SCH_OP_CARRIER_FL_NUM' ordinal='4' />
+              <column datatype='integer' name='OP_CARRIER_AIRLINE_ID' ordinal='5' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='6' />
+              <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='7' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='arrival_performance.csv' table='[arrival_performance#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='datetime' name='FL_DATE' ordinal='0' />
+              <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+              <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+              <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+              <column datatype='datetime' name='CRS_ARR_TIME_Fixed' ordinal='5' />
+              <column datatype='integer' name='CRS_ARR_TIME' ordinal='6' />
+              <column datatype='datetime' name='ARR_TIME_Fixed' ordinal='7' />
+              <column datatype='integer' name='ARR_TIME' ordinal='8' />
+              <column datatype='integer' name='ARR_DELAY' ordinal='9' />
+              <column datatype='integer' name='ARR_DEL15' ordinal='10' />
+              <column datatype='integer' name='ARR_DELAY_GROUP' ordinal='11' />
+              <column datatype='string' name='ARR_TIME_BLK' ordinal='12' />
+              <column datatype='string' name='ARR_TIME_BLK 1' ordinal='13' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='cancellations_and_diversions.csv' table='[cancellations_and_diversions#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='FL_DATE' ordinal='0' />
+              <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+              <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+              <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+              <column datatype='integer' name='CANCELLED' ordinal='5' />
+              <column datatype='string' name='CANCELLATION_CODE' ordinal='6' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='cause_of_delay.csv' table='[cause_of_delay#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='FL_DATE' ordinal='0' />
+              <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+              <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+              <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+              <column datatype='integer' name='CARRIER_DELAY' ordinal='5' />
+              <column datatype='integer' name='WEATHER_DELAY' ordinal='6' />
+              <column datatype='integer' name='NAS_DELAY' ordinal='7' />
+              <column datatype='integer' name='SECURITY_DELAY' ordinal='8' />
+              <column datatype='integer' name='LATE_AIRCRAFT_DELAY' ordinal='9' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='departure_performance.csv' table='[departure_performance#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='FL_DATE' ordinal='0' />
+              <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+              <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+              <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+              <column datatype='datetime' name='CRS_DEP_TIME_Fixed' ordinal='5' />
+              <column datatype='integer' name='CRS_DEP_TIME' ordinal='6' />
+              <column datatype='datetime' name='DEP_TIME_fixed' ordinal='7' />
+              <column datatype='integer' name='DEP_TIME' ordinal='8' />
+              <column datatype='integer' name='DEP_DELAY' ordinal='9' />
+              <column datatype='integer' name='DEP_DEL15' ordinal='10' />
+              <column datatype='integer' name='DEP_DELAY_GROUP' ordinal='11' />
+              <column datatype='string' name='DEP_TIME_BLK_Fixed' ordinal='12' />
+              <column datatype='string' name='DEP_TIME_BLK' ordinal='13' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='destination.csv' table='[destination#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='FL_DATE' ordinal='0' />
+              <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+              <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+              <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+              <column datatype='integer' name='DEST_AIRPORT_SEQ_ID' ordinal='5' />
+              <column datatype='integer' name='DEST_CITY_MARKET_ID' ordinal='6' />
+              <column datatype='string' name='DEST' ordinal='7' />
+              <column datatype='string' name='DEST_CITY_NAME' ordinal='8' />
+              <column datatype='string' name='DEST_STATE_ABR' ordinal='9' />
+              <column datatype='string' name='DEST_STATE_NM' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='flight_summaries.csv' table='[flight_summaries#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='datetime' name='FL_DATE' ordinal='0' />
+              <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+              <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+              <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+              <column datatype='integer' name='FLIGHTS' ordinal='5' />
+              <column datatype='integer' name='DISTANCE' ordinal='6' />
+              <column datatype='integer' name='DISTANCE_GROUP' ordinal='7' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='origin.csv' table='[origin#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='datetime' name='FL_DATE' ordinal='0' />
+              <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+              <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+              <column datatype='integer' name='ORIGIN_AIRPORT_SEQ_ID' ordinal='4' />
+              <column datatype='integer' name='ORIGIN_CITY_MARKET_ID' ordinal='5' />
+              <column datatype='string' name='ORIGIN' ordinal='6' />
+              <column datatype='string' name='ORIGIN_CITY_NAME' ordinal='7' />
+              <column datatype='string' name='ORIGIN_STATE_ABR' ordinal='8' />
+              <column datatype='string' name='ORIGIN_STATE_NM' ordinal='9' />
+              <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='10' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[ARR_DEL15]' value='[arrival_performance.csv].[ARR_DEL15]' />
+          <map key='[ARR_DELAY]' value='[arrival_performance.csv].[ARR_DELAY]' />
+          <map key='[ARR_DELAY_GROUP]' value='[arrival_performance.csv].[ARR_DELAY_GROUP]' />
+          <map key='[ARR_TIME]' value='[arrival_performance.csv].[ARR_TIME]' />
+          <map key='[ARR_TIME_BLK 1]' value='[arrival_performance.csv].[ARR_TIME_BLK 1]' />
+          <map key='[ARR_TIME_BLK]' value='[arrival_performance.csv].[ARR_TIME_BLK]' />
+          <map key='[ARR_TIME_Fixed]' value='[arrival_performance.csv].[ARR_TIME_Fixed]' />
+          <map key='[CANCELLATION_CODE]' value='[cancellations_and_diversions.csv].[CANCELLATION_CODE]' />
+          <map key='[CANCELLED]' value='[cancellations_and_diversions.csv].[CANCELLED]' />
+          <map key='[CARRIER_DELAY]' value='[cause_of_delay.csv].[CARRIER_DELAY]' />
+          <map key='[CRS_ARR_TIME]' value='[arrival_performance.csv].[CRS_ARR_TIME]' />
+          <map key='[CRS_ARR_TIME_Fixed]' value='[arrival_performance.csv].[CRS_ARR_TIME_Fixed]' />
+          <map key='[CRS_DEP_TIME]' value='[departure_performance.csv].[CRS_DEP_TIME]' />
+          <map key='[CRS_DEP_TIME_Fixed]' value='[departure_performance.csv].[CRS_DEP_TIME_Fixed]' />
+          <map key='[DAY_OF_MONTH]' value='[time_periods.csv].[DAY_OF_MONTH]' />
+          <map key='[DAY_OF_WEEK]' value='[time_periods.csv].[DAY_OF_WEEK]' />
+          <map key='[DEP_DEL15]' value='[departure_performance.csv].[DEP_DEL15]' />
+          <map key='[DEP_DELAY]' value='[departure_performance.csv].[DEP_DELAY]' />
+          <map key='[DEP_DELAY_GROUP]' value='[departure_performance.csv].[DEP_DELAY_GROUP]' />
+          <map key='[DEP_TIME]' value='[departure_performance.csv].[DEP_TIME]' />
+          <map key='[DEP_TIME_BLK]' value='[departure_performance.csv].[DEP_TIME_BLK]' />
+          <map key='[DEP_TIME_BLK_Fixed]' value='[departure_performance.csv].[DEP_TIME_BLK_Fixed]' />
+          <map key='[DEP_TIME_fixed]' value='[departure_performance.csv].[DEP_TIME_fixed]' />
+          <map key='[DEST]' value='[destination.csv].[DEST]' />
+          <map key='[DEST_AIRPORT_ID (arrival_performance.csv)]' value='[arrival_performance.csv].[DEST_AIRPORT_ID]' />
+          <map key='[DEST_AIRPORT_ID (cancellations_and_diversions.csv)]' value='[cancellations_and_diversions.csv].[DEST_AIRPORT_ID]' />
+          <map key='[DEST_AIRPORT_ID (cause_of_delay.csv)]' value='[cause_of_delay.csv].[DEST_AIRPORT_ID]' />
+          <map key='[DEST_AIRPORT_ID (departure_performance.csv)]' value='[departure_performance.csv].[DEST_AIRPORT_ID]' />
+          <map key='[DEST_AIRPORT_ID (destination.csv)]' value='[destination.csv].[DEST_AIRPORT_ID]' />
+          <map key='[DEST_AIRPORT_ID (flight_summaries.csv)]' value='[flight_summaries.csv].[DEST_AIRPORT_ID]' />
+          <map key='[DEST_AIRPORT_ID (origin.csv)]' value='[origin.csv].[DEST_AIRPORT_ID]' />
+          <map key='[DEST_AIRPORT_ID (time_periods.csv)]' value='[time_periods.csv].[DEST_AIRPORT_ID]' />
+          <map key='[DEST_AIRPORT_ID]' value='[airline.csv].[DEST_AIRPORT_ID]' />
+          <map key='[DEST_AIRPORT_SEQ_ID]' value='[destination.csv].[DEST_AIRPORT_SEQ_ID]' />
+          <map key='[DEST_CITY_MARKET_ID]' value='[destination.csv].[DEST_CITY_MARKET_ID]' />
+          <map key='[DEST_CITY_NAME]' value='[destination.csv].[DEST_CITY_NAME]' />
+          <map key='[DEST_STATE_ABR]' value='[destination.csv].[DEST_STATE_ABR]' />
+          <map key='[DEST_STATE_NM]' value='[destination.csv].[DEST_STATE_NM]' />
+          <map key='[DISTANCE]' value='[flight_summaries.csv].[DISTANCE]' />
+          <map key='[DISTANCE_GROUP]' value='[flight_summaries.csv].[DISTANCE_GROUP]' />
+          <map key='[FLIGHTS]' value='[flight_summaries.csv].[FLIGHTS]' />
+          <map key='[FL_DATE (arrival_performance.csv)]' value='[arrival_performance.csv].[FL_DATE]' />
+          <map key='[FL_DATE (cancellations_and_diversions.csv)]' value='[cancellations_and_diversions.csv].[FL_DATE]' />
+          <map key='[FL_DATE (cause_of_delay.csv)]' value='[cause_of_delay.csv].[FL_DATE]' />
+          <map key='[FL_DATE (departure_performance.csv)]' value='[departure_performance.csv].[FL_DATE]' />
+          <map key='[FL_DATE (destination.csv)]' value='[destination.csv].[FL_DATE]' />
+          <map key='[FL_DATE (flight_summaries.csv)]' value='[flight_summaries.csv].[FL_DATE]' />
+          <map key='[FL_DATE (origin.csv)]' value='[origin.csv].[FL_DATE]' />
+          <map key='[FL_DATE (time_periods.csv)]' value='[time_periods.csv].[FL_DATE]' />
+          <map key='[FL_DATE]' value='[airline.csv].[FL_DATE]' />
+          <map key='[LATE_AIRCRAFT_DELAY]' value='[cause_of_delay.csv].[LATE_AIRCRAFT_DELAY]' />
+          <map key='[MKT_CARRIER_AIRLINE_ID (arrival_performance.csv)]' value='[arrival_performance.csv].[MKT_CARRIER_AIRLINE_ID]' />
+          <map key='[MKT_CARRIER_AIRLINE_ID (cancellations_and_diversions.csv)]' value='[cancellations_and_diversions.csv].[MKT_CARRIER_AIRLINE_ID]' />
+          <map key='[MKT_CARRIER_AIRLINE_ID (cause_of_delay.csv)]' value='[cause_of_delay.csv].[MKT_CARRIER_AIRLINE_ID]' />
+          <map key='[MKT_CARRIER_AIRLINE_ID (departure_performance.csv)]' value='[departure_performance.csv].[MKT_CARRIER_AIRLINE_ID]' />
+          <map key='[MKT_CARRIER_AIRLINE_ID (destination.csv)]' value='[destination.csv].[MKT_CARRIER_AIRLINE_ID]' />
+          <map key='[MKT_CARRIER_AIRLINE_ID (flight_summaries.csv)]' value='[flight_summaries.csv].[MKT_CARRIER_AIRLINE_ID]' />
+          <map key='[MKT_CARRIER_AIRLINE_ID (origin.csv)]' value='[origin.csv].[MKT_CARRIER_AIRLINE_ID]' />
+          <map key='[MKT_CARRIER_AIRLINE_ID (time_periods.csv)]' value='[time_periods.csv].[MKT_CARRIER_AIRLINE_ID]' />
+          <map key='[MKT_CARRIER_AIRLINE_ID]' value='[airline.csv].[MKT_CARRIER_AIRLINE_ID]' />
+          <map key='[MKT_CARRIER_FL_NUM (arrival_performance.csv)]' value='[arrival_performance.csv].[MKT_CARRIER_FL_NUM]' />
+          <map key='[MKT_CARRIER_FL_NUM (cancellations_and_diversions.csv)]' value='[cancellations_and_diversions.csv].[MKT_CARRIER_FL_NUM]' />
+          <map key='[MKT_CARRIER_FL_NUM (cause_of_delay.csv)]' value='[cause_of_delay.csv].[MKT_CARRIER_FL_NUM]' />
+          <map key='[MKT_CARRIER_FL_NUM (departure_performance.csv)]' value='[departure_performance.csv].[MKT_CARRIER_FL_NUM]' />
+          <map key='[MKT_CARRIER_FL_NUM (destination.csv)]' value='[destination.csv].[MKT_CARRIER_FL_NUM]' />
+          <map key='[MKT_CARRIER_FL_NUM (flight_summaries.csv)]' value='[flight_summaries.csv].[MKT_CARRIER_FL_NUM]' />
+          <map key='[MKT_CARRIER_FL_NUM (origin.csv)]' value='[origin.csv].[MKT_CARRIER_FL_NUM]' />
+          <map key='[MKT_CARRIER_FL_NUM (time_periods.csv)]' value='[time_periods.csv].[MKT_CARRIER_FL_NUM]' />
+          <map key='[MKT_CARRIER_FL_NUM]' value='[airline.csv].[MKT_CARRIER_FL_NUM]' />
+          <map key='[MONTH]' value='[time_periods.csv].[MONTH]' />
+          <map key='[NAS_DELAY]' value='[cause_of_delay.csv].[NAS_DELAY]' />
+          <map key='[OP_CARRIER_AIRLINE_ID]' value='[airline.csv].[OP_CARRIER_AIRLINE_ID]' />
+          <map key='[ORIGIN]' value='[origin.csv].[ORIGIN]' />
+          <map key='[ORIGIN_AIRPORT_ID (arrival_performance.csv)]' value='[arrival_performance.csv].[ORIGIN_AIRPORT_ID]' />
+          <map key='[ORIGIN_AIRPORT_ID (cancellations_and_diversions.csv)]' value='[cancellations_and_diversions.csv].[ORIGIN_AIRPORT_ID]' />
+          <map key='[ORIGIN_AIRPORT_ID (cause_of_delay.csv)]' value='[cause_of_delay.csv].[ORIGIN_AIRPORT_ID]' />
+          <map key='[ORIGIN_AIRPORT_ID (departure_performance.csv)]' value='[departure_performance.csv].[ORIGIN_AIRPORT_ID]' />
+          <map key='[ORIGIN_AIRPORT_ID (destination.csv)]' value='[destination.csv].[ORIGIN_AIRPORT_ID]' />
+          <map key='[ORIGIN_AIRPORT_ID (flight_summaries.csv)]' value='[flight_summaries.csv].[ORIGIN_AIRPORT_ID]' />
+          <map key='[ORIGIN_AIRPORT_ID (origin.csv)]' value='[origin.csv].[ORIGIN_AIRPORT_ID]' />
+          <map key='[ORIGIN_AIRPORT_ID (time_periods.csv)]' value='[time_periods.csv].[ORIGIN_AIRPORT_ID]' />
+          <map key='[ORIGIN_AIRPORT_ID]' value='[airline.csv].[ORIGIN_AIRPORT_ID]' />
+          <map key='[ORIGIN_AIRPORT_SEQ_ID]' value='[origin.csv].[ORIGIN_AIRPORT_SEQ_ID]' />
+          <map key='[ORIGIN_CITY_MARKET_ID]' value='[origin.csv].[ORIGIN_CITY_MARKET_ID]' />
+          <map key='[ORIGIN_CITY_NAME]' value='[origin.csv].[ORIGIN_CITY_NAME]' />
+          <map key='[ORIGIN_STATE_ABR]' value='[origin.csv].[ORIGIN_STATE_ABR]' />
+          <map key='[ORIGIN_STATE_NM]' value='[origin.csv].[ORIGIN_STATE_NM]' />
+          <map key='[QUARTER]' value='[time_periods.csv].[QUARTER]' />
+          <map key='[SCH_OP_CARRIER_AIRLINE_ID]' value='[airline.csv].[SCH_OP_CARRIER_AIRLINE_ID]' />
+          <map key='[SCH_OP_CARRIER_FL_NUM]' value='[airline.csv].[SCH_OP_CARRIER_FL_NUM]' />
+          <map key='[SECURITY_DELAY]' value='[cause_of_delay.csv].[SECURITY_DELAY]' />
+          <map key='[WEATHER_DELAY]' value='[cause_of_delay.csv].[WEATHER_DELAY]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[airline.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cancellations_and_diversions.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[flight_summaries.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FL_DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[FL_DATE]</local-name>
+            <parent-name>[airline.csv]</parent-name>
+            <remote-alias>FL_DATE</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_AIRLINE_ID]</local-name>
+            <parent-name>[airline.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_FL_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_FL_NUM]</local-name>
+            <parent-name>[airline.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_FL_NUM</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SCH_OP_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SCH_OP_CARRIER_AIRLINE_ID]</local-name>
+            <parent-name>[airline.csv]</parent-name>
+            <remote-alias>SCH_OP_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SCH_OP_CARRIER_FL_NUM</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[SCH_OP_CARRIER_FL_NUM]</local-name>
+            <parent-name>[airline.csv]</parent-name>
+            <remote-alias>SCH_OP_CARRIER_FL_NUM</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OP_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OP_CARRIER_AIRLINE_ID]</local-name>
+            <parent-name>[airline.csv]</parent-name>
+            <remote-alias>OP_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_ID]</local-name>
+            <parent-name>[airline.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_ID</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_ID]</local-name>
+            <parent-name>[airline.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_ID</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FL_DATE</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[FL_DATE (arrival_performance.csv)]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>FL_DATE</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_AIRLINE_ID (arrival_performance.csv)]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_FL_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_FL_NUM (arrival_performance.csv)]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_FL_NUM</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_ID (arrival_performance.csv)]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_ID</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_ID (arrival_performance.csv)]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_ID</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRS_ARR_TIME_Fixed</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[CRS_ARR_TIME_Fixed]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>CRS_ARR_TIME_Fixed</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRS_ARR_TIME</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CRS_ARR_TIME]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>CRS_ARR_TIME</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ARR_TIME_Fixed</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[ARR_TIME_Fixed]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>ARR_TIME_Fixed</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ARR_TIME</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ARR_TIME]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>ARR_TIME</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ARR_DELAY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ARR_DELAY]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>ARR_DELAY</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ARR_DEL15</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ARR_DEL15]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>ARR_DEL15</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ARR_DELAY_GROUP</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ARR_DELAY_GROUP]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>ARR_DELAY_GROUP</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ARR_TIME_BLK</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ARR_TIME_BLK]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>ARR_TIME_BLK</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ARR_TIME_BLK 1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ARR_TIME_BLK 1]</local-name>
+            <parent-name>[arrival_performance.csv]</parent-name>
+            <remote-alias>ARR_TIME_BLK 1</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FL_DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[FL_DATE (cancellations_and_diversions.csv)]</local-name>
+            <parent-name>[cancellations_and_diversions.csv]</parent-name>
+            <remote-alias>FL_DATE</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_AIRLINE_ID (cancellations_and_diversions.csv)]</local-name>
+            <parent-name>[cancellations_and_diversions.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_FL_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_FL_NUM (cancellations_and_diversions.csv)]</local-name>
+            <parent-name>[cancellations_and_diversions.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_FL_NUM</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_ID (cancellations_and_diversions.csv)]</local-name>
+            <parent-name>[cancellations_and_diversions.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_ID</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_ID (cancellations_and_diversions.csv)]</local-name>
+            <parent-name>[cancellations_and_diversions.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_ID</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CANCELLED</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CANCELLED]</local-name>
+            <parent-name>[cancellations_and_diversions.csv]</parent-name>
+            <remote-alias>CANCELLED</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CANCELLATION_CODE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CANCELLATION_CODE]</local-name>
+            <parent-name>[cancellations_and_diversions.csv]</parent-name>
+            <remote-alias>CANCELLATION_CODE</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FL_DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[FL_DATE (cause_of_delay.csv)]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>FL_DATE</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_AIRLINE_ID (cause_of_delay.csv)]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_FL_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_FL_NUM (cause_of_delay.csv)]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_FL_NUM</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_ID (cause_of_delay.csv)]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_ID</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_ID (cause_of_delay.csv)]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_ID</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CARRIER_DELAY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CARRIER_DELAY]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>CARRIER_DELAY</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WEATHER_DELAY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WEATHER_DELAY]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>WEATHER_DELAY</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NAS_DELAY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NAS_DELAY]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>NAS_DELAY</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SECURITY_DELAY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SECURITY_DELAY]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>SECURITY_DELAY</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LATE_AIRCRAFT_DELAY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LATE_AIRCRAFT_DELAY]</local-name>
+            <parent-name>[cause_of_delay.csv]</parent-name>
+            <remote-alias>LATE_AIRCRAFT_DELAY</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FL_DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[FL_DATE (departure_performance.csv)]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>FL_DATE</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_AIRLINE_ID (departure_performance.csv)]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_FL_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_FL_NUM (departure_performance.csv)]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_FL_NUM</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_ID (departure_performance.csv)]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_ID</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_ID (departure_performance.csv)]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_ID</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRS_DEP_TIME_Fixed</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[CRS_DEP_TIME_Fixed]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>CRS_DEP_TIME_Fixed</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CRS_DEP_TIME</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CRS_DEP_TIME]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>CRS_DEP_TIME</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEP_TIME_fixed</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[DEP_TIME_fixed]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>DEP_TIME_fixed</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEP_TIME</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEP_TIME]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>DEP_TIME</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEP_DELAY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEP_DELAY]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>DEP_DELAY</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEP_DEL15</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEP_DEL15]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>DEP_DEL15</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEP_DELAY_GROUP</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEP_DELAY_GROUP]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>DEP_DELAY_GROUP</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEP_TIME_BLK_Fixed</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DEP_TIME_BLK_Fixed]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>DEP_TIME_BLK_Fixed</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEP_TIME_BLK</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DEP_TIME_BLK]</local-name>
+            <parent-name>[departure_performance.csv]</parent-name>
+            <remote-alias>DEP_TIME_BLK</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FL_DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[FL_DATE (destination.csv)]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>FL_DATE</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_AIRLINE_ID (destination.csv)]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_FL_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_FL_NUM (destination.csv)]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_FL_NUM</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_ID (destination.csv)]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_ID</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_ID (destination.csv)]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_ID</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_SEQ_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_SEQ_ID]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_SEQ_ID</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_CITY_MARKET_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_CITY_MARKET_ID]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>DEST_CITY_MARKET_ID</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DEST]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>DEST</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_CITY_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DEST_CITY_NAME]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>DEST_CITY_NAME</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_STATE_ABR</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DEST_STATE_ABR]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>DEST_STATE_ABR</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_STATE_NM</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DEST_STATE_NM]</local-name>
+            <parent-name>[destination.csv]</parent-name>
+            <remote-alias>DEST_STATE_NM</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FL_DATE</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[FL_DATE (flight_summaries.csv)]</local-name>
+            <parent-name>[flight_summaries.csv]</parent-name>
+            <remote-alias>FL_DATE</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flight_summaries.csv_76D504C171FF456D96579A212DCFC494]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_AIRLINE_ID (flight_summaries.csv)]</local-name>
+            <parent-name>[flight_summaries.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flight_summaries.csv_76D504C171FF456D96579A212DCFC494]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_FL_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_FL_NUM (flight_summaries.csv)]</local-name>
+            <parent-name>[flight_summaries.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_FL_NUM</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flight_summaries.csv_76D504C171FF456D96579A212DCFC494]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_ID (flight_summaries.csv)]</local-name>
+            <parent-name>[flight_summaries.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_ID</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flight_summaries.csv_76D504C171FF456D96579A212DCFC494]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_ID (flight_summaries.csv)]</local-name>
+            <parent-name>[flight_summaries.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_ID</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flight_summaries.csv_76D504C171FF456D96579A212DCFC494]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FLIGHTS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FLIGHTS]</local-name>
+            <parent-name>[flight_summaries.csv]</parent-name>
+            <remote-alias>FLIGHTS</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flight_summaries.csv_76D504C171FF456D96579A212DCFC494]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DISTANCE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DISTANCE]</local-name>
+            <parent-name>[flight_summaries.csv]</parent-name>
+            <remote-alias>DISTANCE</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flight_summaries.csv_76D504C171FF456D96579A212DCFC494]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DISTANCE_GROUP</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DISTANCE_GROUP]</local-name>
+            <parent-name>[flight_summaries.csv]</parent-name>
+            <remote-alias>DISTANCE_GROUP</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[flight_summaries.csv_76D504C171FF456D96579A212DCFC494]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FL_DATE</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[FL_DATE (origin.csv)]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>FL_DATE</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_AIRLINE_ID (origin.csv)]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_FL_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_FL_NUM (origin.csv)]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_FL_NUM</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_ID (origin.csv)]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_ID</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_SEQ_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_SEQ_ID]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_SEQ_ID</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_CITY_MARKET_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_CITY_MARKET_ID]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>ORIGIN_CITY_MARKET_ID</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ORIGIN]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>ORIGIN</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_CITY_NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ORIGIN_CITY_NAME]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>ORIGIN_CITY_NAME</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_STATE_ABR</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ORIGIN_STATE_ABR]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>ORIGIN_STATE_ABR</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_STATE_NM</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ORIGIN_STATE_NM]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>ORIGIN_STATE_NM</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_ID (origin.csv)]</local-name>
+            <parent-name>[origin.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_ID</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[origin.csv_A1149485FAD1413490579AF1D476EAC9]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>QUARTER</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[QUARTER]</local-name>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias>QUARTER</remote-alias>
+            <ordinal>83</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MONTH</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MONTH]</local-name>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias>MONTH</remote-alias>
+            <ordinal>84</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DAY_OF_MONTH</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DAY_OF_MONTH]</local-name>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias>DAY_OF_MONTH</remote-alias>
+            <ordinal>85</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DAY_OF_WEEK</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DAY_OF_WEEK]</local-name>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias>DAY_OF_WEEK</remote-alias>
+            <ordinal>86</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FL_DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[FL_DATE (time_periods.csv)]</local-name>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias>FL_DATE</remote-alias>
+            <ordinal>87</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_AIRLINE_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_AIRLINE_ID (time_periods.csv)]</local-name>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_AIRLINE_ID</remote-alias>
+            <ordinal>88</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MKT_CARRIER_FL_NUM</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MKT_CARRIER_FL_NUM (time_periods.csv)]</local-name>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias>MKT_CARRIER_FL_NUM</remote-alias>
+            <ordinal>89</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ORIGIN_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ORIGIN_AIRPORT_ID (time_periods.csv)]</local-name>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias>ORIGIN_AIRPORT_ID</remote-alias>
+            <ordinal>90</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEST_AIRPORT_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DEST_AIRPORT_ID (time_periods.csv)]</local-name>
+            <parent-name>[time_periods.csv]</parent-name>
+            <remote-alias>DEST_AIRPORT_ID</remote-alias>
+            <ordinal>91</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Arr Del15' datatype='integer' name='[ARR_DEL15]' role='measure' type='quantitative' />
+      <column caption='Arr Delay' datatype='integer' name='[ARR_DELAY]' role='measure' type='quantitative' />
+      <column caption='Arr Delay Group' datatype='integer' name='[ARR_DELAY_GROUP]' role='measure' type='quantitative' />
+      <column caption='Arr Time' datatype='integer' name='[ARR_TIME]' role='measure' type='quantitative' />
+      <column caption='Arr Time Blk 1' datatype='string' name='[ARR_TIME_BLK 1]' role='dimension' type='nominal' />
+      <column caption='Arr Time Blk' datatype='string' name='[ARR_TIME_BLK]' role='dimension' type='nominal' />
+      <column aggregation='Hour' caption='ARR TIME Fixed' datatype='datetime' name='[ARR_TIME_Fixed]' role='dimension' type='ordinal' />
+      <column caption='Cancellation Code' datatype='string' name='[CANCELLATION_CODE]' role='dimension' type='nominal' />
+      <column caption='Cancelled' datatype='integer' name='[CANCELLED]' role='measure' type='quantitative' />
+      <column caption='Carrier Delay' datatype='integer' name='[CARRIER_DELAY]' role='measure' type='quantitative' />
+      <column caption='Crs Arr Time' datatype='integer' name='[CRS_ARR_TIME]' role='measure' type='quantitative' />
+      <column aggregation='Hour' caption='CRS ARR TIME Fixed' datatype='datetime' name='[CRS_ARR_TIME_Fixed]' role='dimension' type='ordinal' />
+      <column caption='Crs Dep Time' datatype='integer' name='[CRS_DEP_TIME]' role='measure' type='quantitative' />
+      <column aggregation='Hour' caption='CRS DEP TIME Fixed' datatype='datetime' name='[CRS_DEP_TIME_Fixed]' role='dimension' type='ordinal' />
+      <column caption='Day Of Month' datatype='integer' name='[DAY_OF_MONTH]' role='dimension' type='quantitative' />
+      <column caption='Day Of Week' datatype='integer' name='[DAY_OF_WEEK]' role='dimension' type='quantitative' />
+      <column caption='Dep Del15' datatype='integer' name='[DEP_DEL15]' role='measure' type='quantitative' />
+      <column caption='Dep Delay' datatype='integer' name='[DEP_DELAY]' role='measure' type='quantitative' />
+      <column caption='Dep Delay Group' datatype='integer' name='[DEP_DELAY_GROUP]' role='measure' type='quantitative' />
+      <column caption='Dep Time' datatype='integer' name='[DEP_TIME]' role='measure' type='quantitative' />
+      <column caption='Dep Time Blk' datatype='string' name='[DEP_TIME_BLK]' role='dimension' type='nominal' />
+      <column caption='DEP TIME BLK Fixed' datatype='string' name='[DEP_TIME_BLK_Fixed]' role='dimension' type='nominal' />
+      <column aggregation='Hour' caption='DEP TIME fixed' datatype='datetime' name='[DEP_TIME_fixed]' role='dimension' type='ordinal' />
+      <column caption='Dest' datatype='string' name='[DEST]' role='dimension' type='nominal' />
+      <column caption='DEST AIRPORT ID (arrival performance.csv)' datatype='integer' name='[DEST_AIRPORT_ID (arrival_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='DEST AIRPORT ID (cancellations and diversions.csv)' datatype='integer' name='[DEST_AIRPORT_ID (cancellations_and_diversions.csv)]' role='dimension' type='ordinal' />
+      <column caption='DEST AIRPORT ID (cause of delay.csv)' datatype='integer' name='[DEST_AIRPORT_ID (cause_of_delay.csv)]' role='dimension' type='ordinal' />
+      <column caption='DEST AIRPORT ID (departure performance.csv)' datatype='integer' name='[DEST_AIRPORT_ID (departure_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='DEST AIRPORT ID (destination.csv)' datatype='integer' name='[DEST_AIRPORT_ID (destination.csv)]' role='dimension' type='ordinal' />
+      <column caption='DEST AIRPORT ID (flight summaries.csv)' datatype='integer' name='[DEST_AIRPORT_ID (flight_summaries.csv)]' role='dimension' type='ordinal' />
+      <column caption='DEST AIRPORT ID (origin.csv)' datatype='integer' name='[DEST_AIRPORT_ID (origin.csv)]' role='dimension' type='ordinal' />
+      <column caption='DEST AIRPORT ID (time periods.csv)' datatype='integer' name='[DEST_AIRPORT_ID (time_periods.csv)]' role='dimension' type='ordinal' />
+      <column caption='Dest Airport Id' datatype='integer' name='[DEST_AIRPORT_ID]' role='dimension' type='ordinal' />
+      <column caption='Dest Airport Seq Id' datatype='integer' name='[DEST_AIRPORT_SEQ_ID]' role='dimension' type='ordinal' />
+      <column caption='Dest City Market Id' datatype='integer' name='[DEST_CITY_MARKET_ID]' role='dimension' type='ordinal' />
+      <column caption='Dest City Name' datatype='string' name='[DEST_CITY_NAME]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Dest State Abr' datatype='string' name='[DEST_STATE_ABR]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Dest State Nm' datatype='string' name='[DEST_STATE_NM]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Distance' datatype='integer' name='[DISTANCE]' role='measure' type='quantitative' />
+      <column caption='Distance Group' datatype='integer' name='[DISTANCE_GROUP]' role='measure' type='quantitative' />
+      <column caption='Flights' datatype='integer' name='[FLIGHTS]' role='measure' type='quantitative' />
+      <column caption='FL DATE (arrival performance.csv)' datatype='datetime' name='[FL_DATE (arrival_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='FL DATE (cancellations and diversions.csv)' datatype='date' name='[FL_DATE (cancellations_and_diversions.csv)]' role='dimension' type='ordinal' />
+      <column caption='FL DATE (cause of delay.csv)' datatype='date' name='[FL_DATE (cause_of_delay.csv)]' role='dimension' type='ordinal' />
+      <column caption='FL DATE (departure performance.csv)' datatype='date' name='[FL_DATE (departure_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='FL DATE (destination.csv)' datatype='date' name='[FL_DATE (destination.csv)]' role='dimension' type='ordinal' />
+      <column caption='FL DATE (flight summaries.csv)' datatype='datetime' name='[FL_DATE (flight_summaries.csv)]' role='dimension' type='ordinal' />
+      <column caption='FL DATE (origin.csv)' datatype='datetime' name='[FL_DATE (origin.csv)]' role='dimension' type='ordinal' />
+      <column caption='FL DATE (time periods.csv)' datatype='date' name='[FL_DATE (time_periods.csv)]' role='dimension' type='ordinal' />
+      <column caption='Fl Date' datatype='date' name='[FL_DATE]' role='dimension' type='ordinal' />
+      <column caption='Late Aircraft Delay' datatype='integer' name='[LATE_AIRCRAFT_DELAY]' role='measure' type='quantitative' />
+      <column caption='MKT CARRIER AIRLINE ID (arrival performance.csv)' datatype='integer' name='[MKT_CARRIER_AIRLINE_ID (arrival_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER AIRLINE ID (cancellations and diversions.csv)' datatype='integer' name='[MKT_CARRIER_AIRLINE_ID (cancellations_and_diversions.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER AIRLINE ID (cause of delay.csv)' datatype='integer' name='[MKT_CARRIER_AIRLINE_ID (cause_of_delay.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER AIRLINE ID (departure performance.csv)' datatype='integer' name='[MKT_CARRIER_AIRLINE_ID (departure_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER AIRLINE ID (destination.csv)' datatype='integer' name='[MKT_CARRIER_AIRLINE_ID (destination.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER AIRLINE ID (flight summaries.csv)' datatype='integer' name='[MKT_CARRIER_AIRLINE_ID (flight_summaries.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER AIRLINE ID (origin.csv)' datatype='integer' name='[MKT_CARRIER_AIRLINE_ID (origin.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER AIRLINE ID (time periods.csv)' datatype='integer' name='[MKT_CARRIER_AIRLINE_ID (time_periods.csv)]' role='dimension' type='ordinal' />
+      <column caption='Mkt Carrier Airline Id' datatype='integer' name='[MKT_CARRIER_AIRLINE_ID]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER FL NUM (arrival performance.csv)' datatype='integer' name='[MKT_CARRIER_FL_NUM (arrival_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER FL NUM (cancellations and diversions.csv)' datatype='integer' name='[MKT_CARRIER_FL_NUM (cancellations_and_diversions.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER FL NUM (cause of delay.csv)' datatype='integer' name='[MKT_CARRIER_FL_NUM (cause_of_delay.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER FL NUM (departure performance.csv)' datatype='integer' name='[MKT_CARRIER_FL_NUM (departure_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER FL NUM (destination.csv)' datatype='integer' name='[MKT_CARRIER_FL_NUM (destination.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER FL NUM (flight summaries.csv)' datatype='integer' name='[MKT_CARRIER_FL_NUM (flight_summaries.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER FL NUM (origin.csv)' datatype='integer' name='[MKT_CARRIER_FL_NUM (origin.csv)]' role='dimension' type='ordinal' />
+      <column caption='MKT CARRIER FL NUM (time periods.csv)' datatype='integer' name='[MKT_CARRIER_FL_NUM (time_periods.csv)]' role='dimension' type='ordinal' />
+      <column caption='Mkt Carrier Fl Num' datatype='integer' name='[MKT_CARRIER_FL_NUM]' role='dimension' type='ordinal' />
+      <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+      <column caption='Nas Delay' datatype='integer' name='[NAS_DELAY]' role='measure' type='quantitative' />
+      <column caption='Op Carrier Airline Id' datatype='integer' name='[OP_CARRIER_AIRLINE_ID]' role='dimension' type='ordinal' />
+      <column caption='Origin' datatype='string' name='[ORIGIN]' role='dimension' type='nominal' />
+      <column caption='ORIGIN AIRPORT ID (arrival performance.csv)' datatype='integer' name='[ORIGIN_AIRPORT_ID (arrival_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='ORIGIN AIRPORT ID (cancellations and diversions.csv)' datatype='integer' name='[ORIGIN_AIRPORT_ID (cancellations_and_diversions.csv)]' role='dimension' type='ordinal' />
+      <column caption='ORIGIN AIRPORT ID (cause of delay.csv)' datatype='integer' name='[ORIGIN_AIRPORT_ID (cause_of_delay.csv)]' role='dimension' type='ordinal' />
+      <column caption='ORIGIN AIRPORT ID (departure performance.csv)' datatype='integer' name='[ORIGIN_AIRPORT_ID (departure_performance.csv)]' role='dimension' type='ordinal' />
+      <column caption='ORIGIN AIRPORT ID (destination.csv)' datatype='integer' name='[ORIGIN_AIRPORT_ID (destination.csv)]' role='dimension' type='ordinal' />
+      <column caption='ORIGIN AIRPORT ID (flight summaries.csv)' datatype='integer' name='[ORIGIN_AIRPORT_ID (flight_summaries.csv)]' role='dimension' type='ordinal' />
+      <column caption='ORIGIN AIRPORT ID (origin.csv)' datatype='integer' name='[ORIGIN_AIRPORT_ID (origin.csv)]' role='dimension' type='ordinal' />
+      <column caption='ORIGIN AIRPORT ID (time periods.csv)' datatype='integer' name='[ORIGIN_AIRPORT_ID (time_periods.csv)]' role='dimension' type='ordinal' />
+      <column caption='Origin Airport Id' datatype='integer' name='[ORIGIN_AIRPORT_ID]' role='dimension' type='ordinal' />
+      <column caption='Origin Airport Seq Id' datatype='integer' name='[ORIGIN_AIRPORT_SEQ_ID]' role='dimension' type='ordinal' />
+      <column caption='Origin City Market Id' datatype='integer' name='[ORIGIN_CITY_MARKET_ID]' role='dimension' type='ordinal' />
+      <column caption='Origin City Name' datatype='string' name='[ORIGIN_CITY_NAME]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Origin State Abr' datatype='string' name='[ORIGIN_STATE_ABR]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Origin State Nm' datatype='string' name='[ORIGIN_STATE_NM]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Quarter' datatype='integer' name='[QUARTER]' role='dimension' type='quantitative' />
+      <column caption='Sch Op Carrier Airline Id' datatype='string' name='[SCH_OP_CARRIER_AIRLINE_ID]' role='dimension' type='nominal' />
+      <column caption='Sch Op Carrier Fl Num' datatype='string' name='[SCH_OP_CARRIER_FL_NUM]' role='dimension' type='nominal' />
+      <column caption='Security Delay' datatype='integer' name='[SECURITY_DELAY]' role='measure' type='quantitative' />
+      <column caption='Weather Delay' datatype='integer' name='[WEATHER_DELAY]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='airline.csv' datatype='table' name='[__tableau_internal_object_id__].[airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='arrival_performance.csv' datatype='table' name='[__tableau_internal_object_id__].[arrival_performance.csv_1167D5A0821B4753A843743959C306CA]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='cancellations_and_diversions.csv' datatype='table' name='[__tableau_internal_object_id__].[cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='cause_of_delay.csv' datatype='table' name='[__tableau_internal_object_id__].[cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='departure_performance.csv' datatype='table' name='[__tableau_internal_object_id__].[departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='destination.csv' datatype='table' name='[__tableau_internal_object_id__].[destination.csv_EF6F636EBE934E1B9755CDBBED51892A]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='flight_summaries.csv' datatype='table' name='[__tableau_internal_object_id__].[flight_summaries.csv_76D504C171FF456D96579A212DCFC494]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='origin.csv' datatype='table' name='[__tableau_internal_object_id__].[origin.csv_A1149485FAD1413490579AF1D476EAC9]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='time_periods.csv' datatype='table' name='[__tableau_internal_object_id__].[time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='airline.csv' id='airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576'>
+            <properties context=''>
+              <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='airline.csv' table='[airline#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='FL_DATE' ordinal='0' />
+                  <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+                  <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+                  <column datatype='string' name='SCH_OP_CARRIER_AIRLINE_ID' ordinal='3' />
+                  <column datatype='string' name='SCH_OP_CARRIER_FL_NUM' ordinal='4' />
+                  <column datatype='integer' name='OP_CARRIER_AIRLINE_ID' ordinal='5' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='6' />
+                  <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='arrival_performance.csv' id='arrival_performance.csv_1167D5A0821B4753A843743959C306CA'>
+            <properties context=''>
+              <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='arrival_performance.csv' table='[arrival_performance#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='datetime' name='FL_DATE' ordinal='0' />
+                  <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+                  <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+                  <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+                  <column datatype='datetime' name='CRS_ARR_TIME_Fixed' ordinal='5' />
+                  <column datatype='integer' name='CRS_ARR_TIME' ordinal='6' />
+                  <column datatype='datetime' name='ARR_TIME_Fixed' ordinal='7' />
+                  <column datatype='integer' name='ARR_TIME' ordinal='8' />
+                  <column datatype='integer' name='ARR_DELAY' ordinal='9' />
+                  <column datatype='integer' name='ARR_DEL15' ordinal='10' />
+                  <column datatype='integer' name='ARR_DELAY_GROUP' ordinal='11' />
+                  <column datatype='string' name='ARR_TIME_BLK' ordinal='12' />
+                  <column datatype='string' name='ARR_TIME_BLK 1' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='cancellations_and_diversions.csv' id='cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3'>
+            <properties context=''>
+              <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='cancellations_and_diversions.csv' table='[cancellations_and_diversions#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='FL_DATE' ordinal='0' />
+                  <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+                  <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+                  <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+                  <column datatype='integer' name='CANCELLED' ordinal='5' />
+                  <column datatype='string' name='CANCELLATION_CODE' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='cause_of_delay.csv' id='cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3'>
+            <properties context=''>
+              <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='cause_of_delay.csv' table='[cause_of_delay#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='FL_DATE' ordinal='0' />
+                  <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+                  <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+                  <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+                  <column datatype='integer' name='CARRIER_DELAY' ordinal='5' />
+                  <column datatype='integer' name='WEATHER_DELAY' ordinal='6' />
+                  <column datatype='integer' name='NAS_DELAY' ordinal='7' />
+                  <column datatype='integer' name='SECURITY_DELAY' ordinal='8' />
+                  <column datatype='integer' name='LATE_AIRCRAFT_DELAY' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='departure_performance.csv' id='departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335'>
+            <properties context=''>
+              <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='departure_performance.csv' table='[departure_performance#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='FL_DATE' ordinal='0' />
+                  <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+                  <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+                  <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+                  <column datatype='datetime' name='CRS_DEP_TIME_Fixed' ordinal='5' />
+                  <column datatype='integer' name='CRS_DEP_TIME' ordinal='6' />
+                  <column datatype='datetime' name='DEP_TIME_fixed' ordinal='7' />
+                  <column datatype='integer' name='DEP_TIME' ordinal='8' />
+                  <column datatype='integer' name='DEP_DELAY' ordinal='9' />
+                  <column datatype='integer' name='DEP_DEL15' ordinal='10' />
+                  <column datatype='integer' name='DEP_DELAY_GROUP' ordinal='11' />
+                  <column datatype='string' name='DEP_TIME_BLK_Fixed' ordinal='12' />
+                  <column datatype='string' name='DEP_TIME_BLK' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='destination.csv' id='destination.csv_EF6F636EBE934E1B9755CDBBED51892A'>
+            <properties context=''>
+              <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='destination.csv' table='[destination#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='FL_DATE' ordinal='0' />
+                  <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+                  <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+                  <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+                  <column datatype='integer' name='DEST_AIRPORT_SEQ_ID' ordinal='5' />
+                  <column datatype='integer' name='DEST_CITY_MARKET_ID' ordinal='6' />
+                  <column datatype='string' name='DEST' ordinal='7' />
+                  <column datatype='string' name='DEST_CITY_NAME' ordinal='8' />
+                  <column datatype='string' name='DEST_STATE_ABR' ordinal='9' />
+                  <column datatype='string' name='DEST_STATE_NM' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='flight_summaries.csv' id='flight_summaries.csv_76D504C171FF456D96579A212DCFC494'>
+            <properties context=''>
+              <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='flight_summaries.csv' table='[flight_summaries#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='datetime' name='FL_DATE' ordinal='0' />
+                  <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+                  <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+                  <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='4' />
+                  <column datatype='integer' name='FLIGHTS' ordinal='5' />
+                  <column datatype='integer' name='DISTANCE' ordinal='6' />
+                  <column datatype='integer' name='DISTANCE_GROUP' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='origin.csv' id='origin.csv_A1149485FAD1413490579AF1D476EAC9'>
+            <properties context=''>
+              <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='origin.csv' table='[origin#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='datetime' name='FL_DATE' ordinal='0' />
+                  <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='1' />
+                  <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='2' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='3' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_SEQ_ID' ordinal='4' />
+                  <column datatype='integer' name='ORIGIN_CITY_MARKET_ID' ordinal='5' />
+                  <column datatype='string' name='ORIGIN' ordinal='6' />
+                  <column datatype='string' name='ORIGIN_CITY_NAME' ordinal='7' />
+                  <column datatype='string' name='ORIGIN_STATE_ABR' ordinal='8' />
+                  <column datatype='string' name='ORIGIN_STATE_NM' ordinal='9' />
+                  <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='time_periods.csv' id='time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550'>
+            <properties context=''>
+              <relation connection='textscan.0pkmu5h1nlbmxb15zb8re1fun09r' name='time_periods.csv' table='[time_periods#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='QUARTER' ordinal='0' />
+                  <column datatype='integer' name='MONTH' ordinal='1' />
+                  <column datatype='integer' name='DAY_OF_MONTH' ordinal='2' />
+                  <column datatype='integer' name='DAY_OF_WEEK' ordinal='3' />
+                  <column datatype='date' name='FL_DATE' ordinal='4' />
+                  <column datatype='integer' name='MKT_CARRIER_AIRLINE_ID' ordinal='5' />
+                  <column datatype='integer' name='MKT_CARRIER_FL_NUM' ordinal='6' />
+                  <column datatype='integer' name='ORIGIN_AIRPORT_ID' ordinal='7' />
+                  <column datatype='integer' name='DEST_AIRPORT_ID' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[FL_DATE (time_periods.csv)]' />
+                <expression op='[FL_DATE]' />
+              </expression>
+              <expression op='='>
+                <expression op='[DEST_AIRPORT_ID (time_periods.csv)]' />
+                <expression op='[DEST_AIRPORT_ID]' />
+              </expression>
+              <expression op='='>
+                <expression op='[MKT_CARRIER_AIRLINE_ID (time_periods.csv)]' />
+                <expression op='[MKT_CARRIER_AIRLINE_ID]' />
+              </expression>
+              <expression op='='>
+                <expression op='[ORIGIN_AIRPORT_ID (time_periods.csv)]' />
+                <expression op='[ORIGIN_AIRPORT_ID]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='time_periods.csv_9EAD3A1E4C3846709E0F60CCDCCA3550' />
+            <second-end-point object-id='airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576' />
+          </relationship>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[ORIGIN_AIRPORT_ID]' />
+                <expression op='[ORIGIN_AIRPORT_ID (arrival_performance.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[DEST_AIRPORT_ID]' />
+                <expression op='[DEST_AIRPORT_ID (arrival_performance.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[MKT_CARRIER_AIRLINE_ID]' />
+                <expression op='[MKT_CARRIER_AIRLINE_ID (arrival_performance.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576' />
+            <second-end-point object-id='arrival_performance.csv_1167D5A0821B4753A843743959C306CA' />
+          </relationship>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[DEST_AIRPORT_ID]' />
+                <expression op='[DEST_AIRPORT_ID (cancellations_and_diversions.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[ORIGIN_AIRPORT_ID]' />
+                <expression op='[ORIGIN_AIRPORT_ID (cancellations_and_diversions.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[MKT_CARRIER_AIRLINE_ID]' />
+                <expression op='[MKT_CARRIER_AIRLINE_ID (cancellations_and_diversions.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576' />
+            <second-end-point object-id='cancellations_and_diversions.csv_0EA78DBC28E64C188F6995E5923959D3' />
+          </relationship>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[DEST_AIRPORT_ID]' />
+                <expression op='[DEST_AIRPORT_ID (cause_of_delay.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[ORIGIN_AIRPORT_ID]' />
+                <expression op='[ORIGIN_AIRPORT_ID (cause_of_delay.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[MKT_CARRIER_AIRLINE_ID]' />
+                <expression op='[MKT_CARRIER_AIRLINE_ID (cause_of_delay.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576' />
+            <second-end-point object-id='cause_of_delay.csv_1BD333F9F70C4B7D998E005E3C6746A3' />
+          </relationship>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[DEST_AIRPORT_ID]' />
+                <expression op='[DEST_AIRPORT_ID (departure_performance.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[ORIGIN_AIRPORT_ID]' />
+                <expression op='[ORIGIN_AIRPORT_ID (departure_performance.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[FL_DATE]' />
+                <expression op='[FL_DATE (departure_performance.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[MKT_CARRIER_AIRLINE_ID]' />
+                <expression op='[MKT_CARRIER_AIRLINE_ID (departure_performance.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576' />
+            <second-end-point object-id='departure_performance.csv_8ABD307525A643B5AD8ECD36F9336335' />
+          </relationship>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[FL_DATE]' />
+                <expression op='[FL_DATE (destination.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[ORIGIN_AIRPORT_ID]' />
+                <expression op='[ORIGIN_AIRPORT_ID (destination.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[DEST_AIRPORT_ID]' />
+                <expression op='[DEST_AIRPORT_ID (destination.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[MKT_CARRIER_AIRLINE_ID]' />
+                <expression op='[MKT_CARRIER_AIRLINE_ID (destination.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576' />
+            <second-end-point object-id='destination.csv_EF6F636EBE934E1B9755CDBBED51892A' />
+          </relationship>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[DEST_AIRPORT_ID]' />
+                <expression op='[DEST_AIRPORT_ID (flight_summaries.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[MKT_CARRIER_AIRLINE_ID]' />
+                <expression op='[MKT_CARRIER_AIRLINE_ID (flight_summaries.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[ORIGIN_AIRPORT_ID]' />
+                <expression op='[ORIGIN_AIRPORT_ID (flight_summaries.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576' />
+            <second-end-point object-id='flight_summaries.csv_76D504C171FF456D96579A212DCFC494' />
+          </relationship>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[DEST_AIRPORT_ID]' />
+                <expression op='[DEST_AIRPORT_ID (origin.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[MKT_CARRIER_AIRLINE_ID]' />
+                <expression op='[MKT_CARRIER_AIRLINE_ID (origin.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[ORIGIN_AIRPORT_ID]' />
+                <expression op='[ORIGIN_AIRPORT_ID (origin.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='airline.csv_8F455A2C92B14A3A90D21E5F5F1E8576' />
+            <second-end-point object-id='origin.csv_A1149485FAD1413490579AF1D476EAC9' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{AB5F91BA-3C7D-45BD-8146-1E8C83A7E3BB}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7EB11386-EF71-48A5-9BF1-7FF99BE0CBED}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABJ0AAASdAHeZh94
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
