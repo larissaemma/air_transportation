@@ -1,38 +1,40 @@
 # Air Transportation 
 
-This is where I organized my project and created a Kanban, data log, cleaning process, to do lists, etc. for this project. 
+This is where I organized my project and created a Kanban, data log, cleaning process, to-do lists, etc. for this project. 
 
 - [Air Transportation Notion](https://branched-pink-807.notion.site/Air-Transportation-19f938dc8e8c4c09941d75e1aa3887b0?pvs=4)
 
-<h1>Executive Summary</h1>
-<p>An overview on the entire project</p>
+## Motivation
+The motivation behind this project stems from a personal interest in traveling and a desire to leverage data for informed decision-making. By analyzing flight data, we aim to uncover patterns that could enhance future travel experiences. Additionally, the project offers an opportunity to work with a unique dataset, enriching our analytical skills.
 
-<details>
-  <summary><h2>Click to Expand Executive Summary</h2></summary>
+## Data Questions
+1. Which airline has the least travel delay/cancellations?  Which has the most travel delays/cancellations?
+    a.  What are the delay/cancellation reasons?  What's the most common reason?
+    b.   Does the departure or arrival destination affect delays/cancellations?
+    c.  How do flight delays cancellations vary by day of the week?
+    d.  How does departure performance impact arrival performance?
 
-  # Motivation:
-  The motivation behind this project stems from a personal interest in traveling and a desire to leverage data for informed decision-making. By analyzing flight data, we aim to uncover patterns that could enhance future travel experiences. Additionally, the project offers an opportunity to work with a unique dataset, enriching our analytical skills.
+2.  What are the most popular destination airports?
+    a. Which airlines provide the best way to travel to the most popular destinations with the least amount of delays/cancellations? 
 
-  # Data Questions:
-    1.Flight Performance Analysis Questions
-    
-    2.Popular Destination Analysis Questions
-    
-    3.Impact of New Airline Law Questions
-  # Minimum Viable Product (MVP):
-  The MVP will include a PowerBI presentation featuring visually appealing slides with airplane-themed aesthetics. The analysis will be organized into tabs focusing on different aspects such as background info, delays, cancellations, and recommendations. The intended audience includes  business in the airline/transportation industry and travelers seeking insights for efficient travel planning
-  # Data Sources:
-  The data will be sourced from Transtats. https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGK&QO_fu146_anzr=b0-gvzr
-  # Recommendations:
-  The final presentation will include recommendations based on successful airline practices in minimizing delays and cancellations. Strategies such as prioritization during adverse conditions and efficient operations will be explored to guide future decision-making in the industry.
-  This project aims to help people/businesses with useful insights to make travel smoother and operations more efficient.
-  # Known Issues and Challenges:
-    1.Empty Cells in the Dataset
+3.  With the new airline law (link below) which airlines would have the biggest risks of losing money?
+    a. How do international airlines plan to comply with the new law?
+    b. How do airlines plan to adapt their existing refund policies and procedures to comply with the new law?
 
-    2.Miscommunications Between Airlines
+## Data Sources
+The data will be sourced from Transtats. [Transtats Data](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGK&QO_fu146_anzr=b0-gvzr)
 
-    3.Data Volume Management
+## Recommendations
+Technology Investment: Upgrade IT systems for automated refunds and real-time monitoring. Use advanced analytics to better predict and manage refund events.
+Customer Notification and Support: Automate notifications about refund rights and provide clear instructions for claiming refunds. Train customer service teams on new policies and create specialized refund teams.
+Real-Time Monitoring: Implement real-time tracking to monitor flight status and service delivery. Use technology to promptly identify refund-triggering events.
+Training and Development: Conduct regular training sessions and develop e-learning modules to keep staff updated on new policies and procedures.
 
-    4.Implications of the New Airline Law
-
-</details>
+## Known Issues and Challenges
+- A lot of data to go through
+- Forgot to put similar columns in each excel sheet so it can be easier to join when using SQL and Python
+- Some columns were blank
+- When trying to import some csvs some of the columns had missing data and had to go back in and fix
+- When using uppercase columns had an issue with sensitivity when joining others
+- With trying to make charts dealing with days of the week it was a little hard getting it in a specific order I wanted it and have to use the actual data to get the visual I wanted to create
+- Data is big in tableau so takes a long time to load and create maps and charts
