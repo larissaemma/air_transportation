@@ -1,8 +1,8 @@
-# air_transportation
+# Air Transportation 
 
-Progress on capstone log:
-https://www.notion.so/Air-Transportation-19f938dc8e8c4c09941d75e1aa3887b0
-Note: might have to publish for public to see will try to fix that ASAP
+This is where I organized my project and created a Kanban, data log, cleaning process, to do lists, etc. for this project. 
+
+- [Air Transportation Notion](https://branched-pink-807.notion.site/Air-Transportation-19f938dc8e8c4c09941d75e1aa3887b0?pvs=4)
 
 <h1>Executive Summary</h1>
 <p>An overview on the entire project</p>
