@@ -1,3 +1,4 @@
+
 # Air Transportation 
 
 ## Project Summary
@@ -41,9 +42,9 @@ To see more about how I made this possible, I created a [ Notion](https://branch
      
    a. Which airlines provide the best way to travel to the most popular destinations with the least amount of delays/cancellations? 
 
-3. With the new airline law which airlines would have the biggest risks of losing money?
+3. With the new airline rule, which airlines would have the biggest risks of losing money?
 
-   a. How do airlines plan to adapt their existing refund policies and procedures to comply with the new law?
+   a. How do airlines plan to adapt their existing refund policies and procedures to comply with the new rule?
 
 [Back to Contents](#table-of-contents)
 
@@ -62,7 +63,8 @@ For more information you can visit their website and see their recent aritcle [N
 
 ## Recommendations
 **Some recommendations I think would be best for airlines to use to avoid losing customers and money from this new rule:**
-**Technology Investment:** Upgrade IT systems for automated refunds and real-time monitoring. Use advanced analytics to better predict and manage refund events.
+
+**Technology Investment:** Upgrade IT systems for automated refunds and real-time monitoring. Use advanced analytics to better predictions and manage refund events.
 
 **Customer Notification and Support:** Automate notifications about refund rights and provide clear instructions for claiming refunds. Train customer service teams on new policies and create specialized refund teams.
 
@@ -76,7 +78,7 @@ For more information you can visit their website and see their recent aritcle [N
 ## Visuals
 ![Project Visual](https://github.com/larissaemma/air_transportation/blob/larissa_branch/visuals/comparing_charts.png)
 
--- The graphs above presents a comparison between the total number of delays by flight count and the sum of time delayed. The negative pink bar represent instances where flights arrived earlier than expected. In the chart on the left, Friday had the highest total number of delays. On the chart on the right, Saturday had the highest total delayed time.
+-- The graphs above present a comparison between the total number of delays by flight count and the sum of time delayed. The negative pink bar represents instances where flights arrived earlier than expected. In the chart on the left, Friday had the highest total number of delays. On the chart on the right, Saturday had the highest total delayed time.
 
 -- View my presentation slides at [Canva Powerpoint](https://www.canva.com/design/DAGID6Xhn0k/igRz3HX_97JytI79YSTO6Q/view?utm_content=DAGID6Xhn0k&utm_campaign=designshare&utm_medium=link&utm_source=editor)!
 
@@ -88,13 +90,13 @@ For more information you can visit their website and see their recent aritcle [N
 -   **Blank Columns**: Some columns were left blank, requiring additional data cleaning.
 -   **Missing Data in CSVs**: While importing CSVs, some columns had missing data, so I had to revisit excel sheets to correct these gaps.
 -   **Case Sensitivity Issues**: Using uppercase column names caused case sensitivity issues when joining tables.
--   **Ordering Days of the Week**: Creating charts with days of the week was a little challenging as it was hard getting it in a specific order I wanted it
+-   **Ordering Days of the Week**: Creating charts with days of the week was a little challenging as it was hard getting it in a specific order I wanted.
 -   **Performance in Tableau**: The large dataset in Tableau led to slow loading times, making it difficult to create maps and charts at a higher speed.
 
 [Back to Contents](#table-of-contents)
 
 ## Data Sources
-The data is sourced from  [US Bureau of Transportation](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGK&QO_fu146_anzr=b0-gvzr). I downloaded the data from March 2024, the most current data given from the site at this time. I downloaded the columns need from my questions and used that to make 9 different excel sheets. 
+The data is sourced from  [US Bureau of Transportation](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGK&QO_fu146_anzr=b0-gvzr). I downloaded the data from March 2024, the most current data given from the site at the time of this project (June 2024). I downloaded the columns I needed that help answer my questions.  I then used the downloaded data to make 9 different excel sheets. 
 
 [Back to Contents](#table-of-contents)
 
@@ -106,4 +108,3 @@ The data is sourced from  [US Bureau of Transportation](https://www.transtats.bt
 - `Tableau`
 
 [Back to Contents](#table-of-contents)
-
