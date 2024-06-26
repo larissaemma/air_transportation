@@ -29,13 +29,16 @@ The motivation behind this project stems from a personal interest in traveling a
 
    a. How do airlines plan to adapt their existing refund policies and procedures to comply with the new law?
 
-## Data Sources
+## Data Source
 The data will be sourced from US Bureau of Transportation. [Transtats Data](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGK&QO_fu146_anzr=b0-gvzr)
 
 ## Recommendations
-Technology Investment: Upgrade IT systems for automated refunds and real-time monitoring. Use advanced analytics to better predict and manage refund events.
+**Technology Investment:** Upgrade IT systems for automated refunds and real-time monitoring. Use advanced analytics to better predict and manage refund events.
+
 Customer Notification and Support: Automate notifications about refund rights and provide clear instructions for claiming refunds. Train customer service teams on new policies and create specialized refund teams.
+
 Real-Time Monitoring: Implement real-time tracking to monitor flight status and service delivery. Use technology to promptly identify refund-triggering events.
+
 Training and Development: Conduct regular training sessions and develop e-learning modules to keep staff updated on new policies and procedures.
 
 ## Known Issues and Challenges
