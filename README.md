@@ -10,6 +10,7 @@ This is where I organized my project and created a Kanban, data log, cleaning pr
 - [Data Sources](#data-sources)
 - [Recommendations](#recommendations)
 - [Known Issues and Challenges](#known-issues-and-challenges)
+- -[Visuals](#visuals)
 
 ## Motivation
 The motivation behind this project stems from a personal interest in traveling and a desire to leverage data for informed decision-making. By analyzing flight data, we aim to uncover patterns that could enhance future travel experiences. Additionally, the project offers an opportunity to work with a unique dataset, enriching our analytical skills.
@@ -35,11 +36,11 @@ The data will be sourced from US Bureau of Transportation. [Transtats Data](http
 ## Recommendations
 **Technology Investment:** Upgrade IT systems for automated refunds and real-time monitoring. Use advanced analytics to better predict and manage refund events.
 
-Customer Notification and Support: Automate notifications about refund rights and provide clear instructions for claiming refunds. Train customer service teams on new policies and create specialized refund teams.
+**Customer Notification and Support:** Automate notifications about refund rights and provide clear instructions for claiming refunds. Train customer service teams on new policies and create specialized refund teams.
 
-Real-Time Monitoring: Implement real-time tracking to monitor flight status and service delivery. Use technology to promptly identify refund-triggering events.
+**Real-Time Monitoring:** Implement real-time tracking to monitor flight status and service delivery. Use technology to promptly identify refund-triggering events.
 
-Training and Development: Conduct regular training sessions and develop e-learning modules to keep staff updated on new policies and procedures.
+**Training and Development:** Conduct regular training sessions and develop e-learning modules to keep staff updated on new policies and procedures.
 
 ## Known Issues and Challenges
 - A lot of data to go through
@@ -50,3 +51,4 @@ Training and Development: Conduct regular training sessions and develop e-learni
 - With trying to make charts dealing with days of the week it was a little hard getting it in a specific order I wanted it and have to use the actual data to get the visual I wanted to create
 - Data is big in tableau so takes a long time to load and create maps and charts
 
+## Visual ![Project Visual](https://github.com/larissaemma/air_transportation/blob/larissa_branch/visuals/comparing_charts.png)
