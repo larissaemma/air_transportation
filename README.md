@@ -2,29 +2,31 @@
 
 ## Project Summary
 
-Welcome to the skies of America! This project dives deep into analyzing flight data from March 2024, sourced from the US Department of Transportation website. Through data cleaning and using Excel, Python, SQL, and Tableau, this project explores patterns in flight delays, cancellations, and the operational dynamics of airlines and airports.
+Welcome to the skies of America! This project dives into analyzing flight data from March 2024, sourced from the US Department of Transportation website. Through data cleaning and using Excel, Python, SQL, and Tableau, this project explores patterns in flight delays, cancellations, and the operational dynamics of airlines and airports.
 
 Key findings include identifying peak days and times for flight delays, the impact of various factors such as weather and security on flight operations, and rankings of airlines and airports based on delay and cancellation. Recommendations for airlines focus on technological upgrades for real-time monitoring and customer support enhancements to help support the new rules taking place on June 25th, 2024 for all US airports.  
 
-Explore the detailed analysis and visual representations to gain insights that help make informed travel decisions and understand the operational challenges faced by airlines today.
+Explore the table of contents to gain insights that help make informed travel decisions and understand the operational challenges faced by airlines today.
 
 
 ## Table of Contents
-- [Notion](#notion) 
 - [Motivation](#motivation)
+- [Notion](#notion) 
 - [Data Questions](#data-questions)
+- [New Rule](#new-rule)
 - [Recommendations](#recommendations)
 - [Visuals](#visuals)
 -  [Known Issues and Challenges](#known-issues-and-challenges)
 -  [Data Sources](#data-sources)
 - [Tools](#tools)
 
-## Notion
-To see more about how I made this possible, I created a [ Notion](https://branched-pink-807.notion.site/Air-Transportation-19f938dc8e8c4c09941d75e1aa3887b0?pvs=4) to showcase all my steps, including data cleaning, kanban, to-do lists, and the tools I used to make the project run smoothly and look professional.
-
-
 ## Motivation
 The motivation behind this project stems from a personal interest in traveling and a desire to leverage data for informed decision-making. By analyzing flight data, we aim to uncover patterns that could enhance future travel experiences. Additionally, the project offers an opportunity to work with a unique dataset, enriching our analytical skills.
+
+[Back to Contents](#table-of-contents)
+
+## Notion
+To see more about how I made this possible, I created a [ Notion](https://branched-pink-807.notion.site/Air-Transportation-19f938dc8e8c4c09941d75e1aa3887b0?pvs=4) to showcase all my steps, including data cleaning, kanban, to-do lists, and the tools I used to make the project run smoothly and look professional.
 
 [Back to Contents](#table-of-contents)
 
@@ -55,6 +57,9 @@ The Biden-Harris Administration announced a final rule by the U.S. Department of
 -   **Unprovided Extra Services**: Refunds for services like Wi-Fi, seat selection, or in-flight entertainment not provided.
 
 For more information you can visit their website and see their recent aritcle [New Rule](https://www.transportation.gov/briefing-room/biden-harris-administration-announces-final-rule-requiring-automatic-refunds-airline).
+
+[Back to Contents](#table-of-contents)
+
 ## Recommendations
 **Some recommendations I think would be best for airlines to use to avoid losing customers and money from this new rule:**
 **Technology Investment:** Upgrade IT systems for automated refunds and real-time monitoring. Use advanced analytics to better predict and manage refund events.
@@ -85,6 +90,8 @@ For more information you can visit their website and see their recent aritcle [N
 -   **Case Sensitivity Issues**: Using uppercase column names caused case sensitivity issues when joining tables.
 -   **Ordering Days of the Week**: Creating charts with days of the week was a little challenging as it was hard getting it in a specific order I wanted it
 -   **Performance in Tableau**: The large dataset in Tableau led to slow loading times, making it difficult to create maps and charts at a higher speed.
+
+[Back to Contents](#table-of-contents)
 
 ## Data Sources
 The data is sourced from  [US Bureau of Transportation](https://www.transtats.bts.gov/DL_SelectFields.aspx?gnoyr_VQ=FGK&QO_fu146_anzr=b0-gvzr). I downloaded the data from March 2024, the most current data given from the site at this time. I downloaded the columns need from my questions and used that to make 9 different excel sheets. 
